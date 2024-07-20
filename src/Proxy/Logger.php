@@ -4,7 +4,7 @@ namespace YukataRm\SimpleLogger\Proxy;
 
 use YukataRm\StaticProxy\StaticProxy;
 
-use YukataRm\SimpleLogger\Proxy\LoggerManager;
+use YukataRm\SimpleLogger\Proxy\Manager;
 
 /**
  * LoggerのProxy
@@ -32,17 +32,17 @@ use YukataRm\SimpleLogger\Proxy\LoggerManager;
  * @method static void alertLog(mixed $message, mixed $value = null)
  * @method static void emergencyLog(mixed $message, mixed $value = null)
  * 
- * @see \YukataRm\SimpleLogger\Proxy\Interface\ManagerInterface
+ * @see \YukataRm\SimpleLogger\Proxy\Manager
  */
 class Logger extends StaticProxy
 {
     /** 
-     * LoggerManagerの実クラス名を取得する
+     * Get class name of call dynamic method
      * 
      * @return string 
      */
-    public static function getClassName(): string
+    protected static function getProxyClassName(): string
     {
-        return LoggerManager::class;
+        return Manager::class;
     }
 }

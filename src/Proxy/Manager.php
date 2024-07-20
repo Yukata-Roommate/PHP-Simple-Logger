@@ -2,10 +2,8 @@
 
 namespace YukataRm\SimpleLogger\Proxy;
 
-use YukataRm\SimpleLogger\Proxy\Interface\ManagerInterface;
-
-use YukataRm\SimpleLogger\Logger;
 use YukataRm\SimpleLogger\Interface\LoggerInterface;
+use YukataRm\SimpleLogger\Logger;
 use YukataRm\SimpleLogger\Enum\LogLevelEnum;
 
 /**
@@ -13,15 +11,15 @@ use YukataRm\SimpleLogger\Enum\LogLevelEnum;
  * 
  * @package YukataRm\SimpleLogger\Proxy
  */
-class LoggerManager implements ManagerInterface
+class Manager
 {
     /**
      * Loggerのインスタンスを生成する
      *
      * @param \YukataRm\SimpleLogger\Enum\LogLevelEnum $logLevel
-     * @return \YukataRm\SimpleLogger\Logger
+     * @return \YukataRm\SimpleLogger\Interface\LoggerInterface
      */
-    public function make(LogLevelEnum $logLevel): Logger
+    public function make(LogLevelEnum $logLevel): LoggerInterface
     {
         return new Logger($logLevel);
     }
@@ -33,9 +31,9 @@ class LoggerManager implements ManagerInterface
     /**
      * DebugレベルのLoggerのインスタンスを生成する
      *
-     * @return \YukataRm\SimpleLogger\Logger
+     * @return \YukataRm\SimpleLogger\Interface\LoggerInterface
      */
-    public function debug(): Logger
+    public function debug(): LoggerInterface
     {
         return $this->make(LogLevelEnum::DEBUG);
     }
@@ -43,9 +41,9 @@ class LoggerManager implements ManagerInterface
     /**
      * InfoレベルのLoggerのインスタンスを生成する
      *
-     * @return \YukataRm\SimpleLogger\Logger
+     * @return \YukataRm\SimpleLogger\Interface\LoggerInterface
      */
-    public function info(): Logger
+    public function info(): LoggerInterface
     {
         return $this->make(LogLevelEnum::INFO);
     }
@@ -53,9 +51,9 @@ class LoggerManager implements ManagerInterface
     /**
      * NoticeレベルのLoggerのインスタンスを生成する
      *
-     * @return \YukataRm\SimpleLogger\Logger
+     * @return \YukataRm\SimpleLogger\Interface\LoggerInterface
      */
-    public function notice(): Logger
+    public function notice(): LoggerInterface
     {
         return $this->make(LogLevelEnum::NOTICE);
     }
@@ -63,9 +61,9 @@ class LoggerManager implements ManagerInterface
     /**
      * WarningレベルのLoggerのインスタンスを生成する
      *
-     * @return \YukataRm\SimpleLogger\Logger
+     * @return \YukataRm\SimpleLogger\Interface\LoggerInterface
      */
-    public function warning(): Logger
+    public function warning(): LoggerInterface
     {
         return $this->make(LogLevelEnum::WARNING);
     }
@@ -73,9 +71,9 @@ class LoggerManager implements ManagerInterface
     /**
      * ErrorレベルのLoggerのインスタンスを生成する
      *
-     * @return \YukataRm\SimpleLogger\Logger
+     * @return \YukataRm\SimpleLogger\Interface\LoggerInterface
      */
-    public function error(): Logger
+    public function error(): LoggerInterface
     {
         return $this->make(LogLevelEnum::ERROR);
     }
@@ -83,9 +81,9 @@ class LoggerManager implements ManagerInterface
     /**
      * CriticalレベルのLoggerのインスタンスを生成する
      *
-     * @return \YukataRm\SimpleLogger\Logger
+     * @return \YukataRm\SimpleLogger\Interface\LoggerInterface
      */
-    public function critical(): Logger
+    public function critical(): LoggerInterface
     {
         return $this->make(LogLevelEnum::CRITICAL);
     }
@@ -93,9 +91,9 @@ class LoggerManager implements ManagerInterface
     /**
      * AlertレベルのLoggerのインスタンスを生成する
      *
-     * @return \YukataRm\SimpleLogger\Logger
+     * @return \YukataRm\SimpleLogger\Interface\LoggerInterface
      */
-    public function alert(): Logger
+    public function alert(): LoggerInterface
     {
         return $this->make(LogLevelEnum::ALERT);
     }
@@ -103,9 +101,9 @@ class LoggerManager implements ManagerInterface
     /**
      * EmergencyレベルのLoggerのインスタンスを生成する
      *
-     * @return \YukataRm\SimpleLogger\Logger
+     * @return \YukataRm\SimpleLogger\Interface\LoggerInterface
      */
-    public function emergency(): Logger
+    public function emergency(): LoggerInterface
     {
         return $this->make(LogLevelEnum::EMERGENCY);
     }

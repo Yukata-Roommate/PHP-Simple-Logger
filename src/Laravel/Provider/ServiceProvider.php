@@ -1,17 +1,17 @@
 <?php
 
-namespace YukataRm\Laravel\SimpleLogger;
+namespace YukataRm\Laravel\SimpleLogger\Provider;
 
 use Illuminate\Support\ServiceProvider as Provider;
 
-use YukataRm\Laravel\SimpleLogger\LoggerManager;
+use YukataRm\Laravel\SimpleLogger\Facade\Manager;
 use YukataRm\Laravel\SimpleLogger\Facade\Logger;
 
 /**
  * ServiceProvider
  * Facadeの登録とパッケージに含まれるファイルの公開の設定を行う
  * 
- * @package YukataRm\Laravel\SimpleLogger
+ * @package YukataRm\Laravel\SimpleLogger\Provider
  */
 class ServiceProvider extends Provider
 {
@@ -20,7 +20,7 @@ class ServiceProvider extends Provider
      *
      * @var string
      */
-    private string $publicationsPath = __DIR__ . DIRECTORY_SEPARATOR . "publications";
+    private string $publicationsPath = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "publications";
 
     /**
      * アプリケーションの起動時に実行する
@@ -32,7 +32,7 @@ class ServiceProvider extends Provider
     {
         // FacadeとManagerの紐づけ
         $this->app->singleton(Logger::class, function () {
-            return new LoggerManager();
+            return new Manager();
         });
     }
 

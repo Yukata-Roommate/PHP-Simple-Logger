@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static void alertLog(mixed $message, mixed $value = null)
  * @method static void emergencyLog(mixed $message, mixed $value = null)
  * 
- * @see \YukataRm\Laravel\SimpleLogger\Interface\ManagerInterface
+ * @see \YukataRm\Laravel\SimpleLogger\Facade\Manager
  */
 class Logger extends Facade
 {
