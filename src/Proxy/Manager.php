@@ -7,7 +7,7 @@ use YukataRm\SimpleLogger\Logger;
 use YukataRm\SimpleLogger\Enum\LogLevelEnum;
 
 /**
- * Proxyを経由してstaticにアクセスされるManager
+ * Proxy Manager
  * 
  * @package YukataRm\SimpleLogger\Proxy
  */

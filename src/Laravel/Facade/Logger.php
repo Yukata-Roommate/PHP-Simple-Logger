@@ -5,8 +5,7 @@ namespace YukataRm\Laravel\SimpleLogger\Facade;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * LoggerのFacade
- * LoggerManagerのMethodをstaticに呼び出せるようにする
+ * Logger Facade
  * 
  * @package YukataRm\Laravel\SimpleLogger\Facade
  * 

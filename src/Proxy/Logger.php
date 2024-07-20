@@ -7,8 +7,7 @@ use YukataRm\StaticProxy\StaticProxy;
 use YukataRm\SimpleLogger\Proxy\Manager;
 
 /**
- * LoggerのProxy
- * LoggerManagerのMethodをstaticに呼び出せるようにする
+ * Logger Proxy
  * 
  * @package YukataRm\SimpleLogger\Proxy
  * 

@@ -360,7 +360,6 @@ class Logger implements LoggerInterface
     /**
      * ログファイルの出力先ディレクトリを取得する
      * 
-     * @throws \RuntimeException
      * @return string
      */
     protected function getDirectory(): string
@@ -464,7 +463,6 @@ class Logger implements LoggerInterface
     /**
      * ログファイルのファイル名を取得する
      * 
-     * @throws \RuntimeException
      * @return string
      */
     protected function getFileName(): string
