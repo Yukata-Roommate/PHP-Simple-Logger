@@ -38,7 +38,7 @@ class Logger implements LoggerInterface
      *
      * @param \YukataRm\SimpleLogger\Enum\LogLevelEnum $logLevel
      */
-    function __construct(LogLevelEnum $logLevel)
+    public function __construct(LogLevelEnum $logLevel)
     {
         // .envファイルの内容を保持するクラスのインスタンスを生成
         $this->env = new EnvLoader();
@@ -371,7 +371,7 @@ class Logger implements LoggerInterface
         $directory = $this->moldDirectory($directory);
 
         // 出力先ディレクトリが空の場合は、例外を発生させる
-        if (empty($directory)) throw new \RuntimeException("Output directory is empty.");
+        if (empty($directory)) throw new \RuntimeException("output directory is empty.");
 
         // 出力先ディレクトリが存在しない場合は、ディレクトリを作成する
         if (!file_exists($directory)) mkdir($directory, 0777, true);
@@ -474,7 +474,7 @@ class Logger implements LoggerInterface
         $fileExtension = empty($this->fileExtension) ? $this->fileExtension() : $this->fileExtension;
 
         return match (true) {
-            empty($fileName) && empty($fileExtension) => throw new \RuntimeException("File name and file extension are empty."),
+            empty($fileName) && empty($fileExtension) => throw new \RuntimeException("file name and file extension are empty."),
 
             empty($fileName)      => ".{$fileExtension}",
             empty($fileExtension) => $fileName,

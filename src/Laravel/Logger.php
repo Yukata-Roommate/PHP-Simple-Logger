@@ -22,7 +22,7 @@ class Logger extends SimpleLogger implements LoggerInterface
      *
      * @param \YukataRm\SimpleLogger\Enum\LogLevelEnum $logLevel
      */
-    function __construct(LogLevelEnum $logLevel)
+    public function __construct(LogLevelEnum $logLevel)
     {
         // ログの出力レベルをセット
         $this->logLevel = $logLevel;
